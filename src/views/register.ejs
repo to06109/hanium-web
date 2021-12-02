@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입페이지</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+        }
+
+        .mytitle {
+            color: black;
+            width: 300px;
+            height: 150px;
+            background-color: gold;
+            background-position: center; /*텍스트정렬*/
+            background-size: cover;
+
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .insert {
+            padding-top: 20px;
+            padding-left: 65px;
+        }
+
+        .button {
+            margin: 10px auto; /*화면 양쪽 여백 동등하게 맞춰짐(센터로감)*/
+            width: 80px;
+            height: 30px;
+            font-size: 15px;
+        }
+
+        .login_style {
+            width: 80px;
+            height: 30px;
+            font-size: 15px;
+        }
+
+        .register_style {
+
+            width: 80px;
+            height: 30px;
+            font-size: 15px;
+        }
+
+        .wrap {
+            margin: 10px auto; /*화면 양쪽 여백 동등하게 맞춰짐(센터로감)*/
+            width: 300px;
+        }
+    </style>
+
+    <script>
+      function gotoregister() {
+        location.href = "/user/register"
+      }
+    </script>
+</head>
+
+<body>
+<div class="wrap">
+    <div class="mytitle">
+        <h1>회원가입 페이지</h1>
+        <h5>정보를 입력해주세요</h5>
+    </div>
+    <div class="insert">
+        <p>
+            <input type="text" placeholder="아이디"/> <!--<p>로 묶으면 자동줄바꿈-->
+        </p>
+        <p>
+            <input type="password" placeholder="비밀번호"/>
+        </p>
+        <p>
+            <input type="text" placeholder="이름"/> <!--<p>로 묶으면 자동줄바꿈-->
+        </p>
+        <p>
+            <input type="text" placeholder="이메일"/> <!--<p>로 묶으면 자동줄바꿈-->
+        </p>
+
+    </div>
+    <div class = "button">
+        <p>
+            <button onclick="gotoregister()" class="register_style">회원가입</button>
+        </p>
+    </div>
+
+</div>
+</body>
+</body>
+
+</html>
+
