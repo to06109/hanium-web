@@ -1,19 +1,16 @@
 //////express 실행
 const express = require('express')
-const app = express()
+const bodyParser = require("body-parser");
+const app = express();
 const port = 3000
 
-const goodsRouter = require('./src/routes/goods'); //goods.js 파일에 있는 라우터들을 가져옴
-const userRouter = require('./src/routes/user'); //user.js 파일에 있는 라우터들을 가져옴
+const goodsRouter = require('./src/routes/home/goods'); //goods.js 파일에 있는 라우터들을 가져옴
+const userRouter = require('./src/routes/home/user'); //user.js 파일에 있는 라우터들을 가져옴
 
 //POST나 PUT으로 받을 때 안에 body데이터 쓸 수 있게 하는 미들웨어
-app.use(express.urlencoded({extended: false}))
-app.use(express.json())
-app.use(express.static('public')); //사진, 동영상 등 정적파일 불러오기
-
-app.use('/goods', goodsRouter)
-app.use('/user', userRouter)
-
+//app.use(express.urlencoded({extended: false}))
+//app.use(express.json())
+//app.use(express.static('public')); //사진, 동영상 등 정적파일 불러오기
 /*
 app.use((req, res, next) => { //middleware: 요청이 라우터에 들어오기 전에 req를 체크
   console.log(req);
@@ -24,9 +21,13 @@ app.use((req, res, next) => { //middleware: 요청이 라우터에 들어오기 
 //////템플릿 엔진 ejs 사용하기
 app.set('views', __dirname + '/src/views');
 app.set('view engine', 'ejs');
-
 app.use(express.static(`${__dirname}/src/public`)); // /js 파일로 연결할 수 있게 해주는 미들웨어
+app.use(bodyParser.json()); //bodyParser 미들웨어 등록
+//URL을 통해 전달되는 데이터에 한글, 공백 등과 같은 문자가 포함될 경우 제대로 이니식되지 않는 문제 해결
+app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use('/goods', goodsRouter)
+app.use('/user', userRouter)
 app.get('/', (req, res) => {
   res.render('main');
 })
