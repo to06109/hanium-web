@@ -27,7 +27,17 @@ function login() {
         body: JSON.stringify(req), //req를 JSON형태로 감싸줌
     })
         .then((res) => res.json()) //req해서 서버에서 보낸 res 받기
-        .then((res) => console.log(res));
+        .then((res) => {
+            if(res.success){ //로그인 성공 시 루트로 이동
+                location.href = "/";
+            } else { //로그인 실패 시 실패 메세지 띄움
+                alert(res.msg); 
+            }
+        })
+        //에러처리
+        .catch((err) => {
+            console.error(new Error("로그인 중 에러 발생"));
+        });
 }
 
 function gotoregister() {
