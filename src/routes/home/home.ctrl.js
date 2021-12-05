@@ -20,6 +20,12 @@ const process = {
         const response = user.login(); //User에서 res 받음
         return res.json(response); //받은 res를 client한테 json형태로 전달
     },
+
+    register: (req, res) => {
+        const user = new User(req.body); 
+        const response = user.register(); 
+        return res.json(response); 
+    }
 };
 
 //ctrl 내보내기

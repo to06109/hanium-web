@@ -28,13 +28,17 @@ class UserStorage {//데이터베이스
         const users = this.#users; //users 데이터 받아옴
         const idx = users.id.indexOf(id); //받아온 id의 인덱스값
         const usersKeys = Object.keys(users); //users의 key값들만 배열로 만듬: [id, psword, name]
-        
+
         const userInfo = Object.keys(users).reduce((newUser, info) => {
             newUser[info] = users[info][idx];
             return newUser;
         }, {});
 
         return userInfo; //user의 id에 맞는 정보(psword, name)가 배열로 만들어짐
+    }
+
+    static save(userInfo) {
+
     }
 }
 
