@@ -21,9 +21,9 @@ const process = {
         return res.json(response); //받은 res를 client한테 json형태로 전달
     },
 
-    register: (req, res) => {
+    register: async (req, res) => {
         const user = new User(req.body); 
-        const response = user.register(); 
+        const response = await user.register(); 
         return res.json(response); 
     }
 };
