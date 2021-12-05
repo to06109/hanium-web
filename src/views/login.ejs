@@ -54,33 +54,23 @@
             width: 300px;
         }
     </style>
+    <link rel="stylesheet" href="/css/home/login.css">
     <script src="/js/home/login.js" defer></script>
 </head>
 
 <body>
-<div class="wrap">
-    <div class="mytitle">
-        <h1>로그인 페이지</h1>
-        <h5>아이디, 비밀번호를 입력해주세요</h5>
-    </div>
-    <div class="insert">
-        <p>
-            <input id="id" type="text" placeholder="아이디"/> <!--<p>로 묶으면 자동줄바꿈-->
-        </p>
-        <p>
-            <input id="psword" type="password"placeholder="비밀번호"/>
-        </p>
-
-    </div>
-    <div class = "button">
-        <p>
-            <button id="loginbtn" class="login_style">로그인</button>
-        </p>
-        <p>
-            <button id="registerbtn" class="register_style">회원가입</button>
-        </p>
-    </div>
-</div>
+    <div class="login-page">
+        <div class="form">
+          <form class="login-form">
+            <input id="id" type="text" placeholder="아이디"/>
+            <input id="psword" type="password" placeholder="비밀번호"/>
+            <button id="loginbtn">로그인</button>
+            <p class="message">Not registered? <a href="/user/register">Create an account</a></p>
+          </form>
+        </div>
+      </div>
 </body>
 </html>
+
+<!--Copyright (c) 2021 by Aigars Silkalns (https://codepen.io/colorlib/pen/rxddKy)-->
 

@@ -5,11 +5,11 @@
 //const id = document.querySelector("선택자");
 const id = document.querySelector("#id"),
     psword = document.querySelector("#psword"),
-    loginBtn = document.querySelector("#loginbtn"),
-    registerBtn = document.querySelector("#registerbtn");
+    loginBtn = document.querySelector("#loginbtn");
+    //registerBtn = document.querySelector("#registerbtn");
 
 loginBtn.addEventListener("click", login);
-registerBtn.addEventListener("click", gotoregister);
+//registerBtn.addEventListener("click", gotoregister);
 
 function login() {
     const req = {
@@ -40,6 +40,6 @@ function login() {
         });
 }
 
-function gotoregister() {
-    location.href = "/user/register";
-}
+// function gotoregister() {
+//     location.href = "/user/register";
+// }
