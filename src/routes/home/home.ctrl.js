@@ -15,9 +15,9 @@ const output = {
 
 
 const process = {
-    login: (req, res) => {
+    login: async (req, res) => {
         const user = new User(req.body); //client가 전달한 request 데이터를 넣음
-        const response = user.login(); //User에서 res 받음
+        const response = await user.login(); //User에서 res 받음
         return res.json(response); //받은 res를 client한테 json형태로 전달
     },
 

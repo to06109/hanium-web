@@ -7,9 +7,10 @@ class User {
         this.body = body;
     }
 
-    login() {
+    //await은 async함수 안에서만 동작
+    async login() {
         const client = this.body;
-        const {id, psword} = UserStorage.getUserInfo(client.id);
+        const {id, psword} = await UserStorage.getUserInfo(client.id); //await: 얘가 다 수행될때까지 기다림
 
         if(id) { //전달한 id가 UserStorage에 있으면
 
