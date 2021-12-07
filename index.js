@@ -1,6 +1,11 @@
 //////express 실행
 const express = require('express')
 const bodyParser = require("body-parser");
+
+//환경변수 관리
+const dotenv = require("dotenv"); 
+dotenv.config();
+
 const app = express();
 const port = 3000
 

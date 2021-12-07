@@ -1,10 +1,10 @@
 const mysql = require("mysql");
 
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "knormal",
-    password: "knormal@0102",
-    database: "knormal"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PSWORD,
+    database: process.env.DB_DATABASE,
 });
 
 db.connect(); //연결요청
