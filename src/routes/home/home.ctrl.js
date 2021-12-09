@@ -1,14 +1,19 @@
 "use strict"
 
 const User = require("../../models/User")
+const Detail = require("../../models/Detail")
 
 const output = {
     login: (req, res) => {
-        res.render('login'); //index.ejs를 그림
+        res.render('login'); //login.ejs를 그림
     },
     
     register: (req, res) => {
-        res.render('register'); //index.ejs를 그림
+        res.render('register'); //register.ejs를 그림
+    },
+
+    detail: (req, res) => {
+        res.render('detail'); //detail.ejs를 그림
     },
 };
 
@@ -25,7 +30,14 @@ const process = {
         const user = new User(req.body); 
         const response = await user.register(); 
         return res.json(response); 
+    },
+
+    detail: async (req, res) => {
+        const detail = new Detail(req.body); 
+        const response = await detail.search(); 
+        return res.json(response); 
     }
+
 };
 
 //ctrl 내보내기
