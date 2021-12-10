@@ -12,11 +12,14 @@ const output = {
         res.render('register'); //register.ejs를 그림
     },
 
-    detail: (req, res) => {
+    detail: async (req, res) => {
         res.render('detail'); //detail.ejs를 그림
+        const detail = new Detail(req.body); 
+        const response = await detail.search(); 
+        console.log(response);
+        //res.send(response); 
     },
 };
-
 
 
 const process = {
@@ -32,12 +35,13 @@ const process = {
         return res.json(response); 
     },
 
-    detail: async (req, res) => {
-        const detail = new Detail(req.body); 
-        const response = await detail.search(); 
-        //console.log(res.json(response));
-        return res.json(response); 
-    }
+    // detail: async (req, res) => {
+    //     const detail = new Detail(req.body); 
+    //     const response = await detail.search(); 
+    //     //console.log(res.json(response));
+    //     //res.send(response);
+    //     return res.json(response); 
+    // }
 
 };
 

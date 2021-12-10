@@ -5,6 +5,8 @@ var router = express.Router();
 const ctrl = require("./home.ctrl");
 
 router.get('/detail', ctrl.output.detail);
-router.post('/detail', ctrl.process.detail);
+//router.post('/detail', ctrl.process.detail);
+//router.get('/test', ctrl.output.detail);
   
 module.exports = router;
+

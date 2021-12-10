@@ -12,14 +12,13 @@ class Detail {
         const client = this.body;
         try {
             const { Name, Price, Desc, Location, Image } = await DetailStorage.getDetailInfo(client.searchKeyword); //await: 얘가 다 수행될때까지 기다림
+            const data = { Name, Price, Desc, Location, Image};   ///////////여기까지 데이터 잘 끌어옴
+            console.log(data);
 
-            if(Name) { //전달한 name이 DetailStorage에 있으면
-                //console.log(Name, Price, Desc, Location, Image);
-                return { success: true, msg: "존재하는 상품입니다." };
-            }
+            return data;
             //console.log("존재하지 않는 상품!!");
             //return { success: false, msg: "존재하지 않는 상품입니다." };
-            return { success: false };
+            //return { success: false };
 
         } catch (err){
             return { success: false, msg: err };
