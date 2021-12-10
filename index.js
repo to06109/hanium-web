@@ -30,7 +30,7 @@ app.set('view engine', 'ejs');
 app.use("/img", express.static(`${__dirname}/src/public/img`));
 app.use(express.static(`${__dirname}/src/public`)); // /js 파일로 연결할 수 있게 해주는 미들웨어
 app.use(bodyParser.json()); //bodyParser 미들웨어 등록
-//URL을 통해 전달되는 데이터에 한글, 공백 등과 같은 문자가 포함될 경우 제대로 이니식되지 않는 문제 해결
+//URL을 통해 전달되는 데이터에 한글, 공백 등과 같은 문자가 포함될 경우 제대로 인식되지 않는 문제 해결
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/goods', goodsRouter)

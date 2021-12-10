@@ -35,6 +35,7 @@ const process = {
     detail: async (req, res) => {
         const detail = new Detail(req.body); 
         const response = await detail.search(); 
+        //console.log(res.json(response));
         return res.json(response); 
     }
 
